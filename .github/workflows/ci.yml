@@ -22,8 +22,15 @@ jobs:
       run: |
         cd frontend
         go build -v
+        
+    - name: lint
+      run: |
+        curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.42.0
+        cd frontend
+        $(go env GOPATH)/bin/golangci-lint run -D errcheck -D gosimple
 
     - name: Test
       run: |
         cd frontend
         go test -v
+        
