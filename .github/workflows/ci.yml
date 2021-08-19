@@ -50,4 +50,4 @@ jobs:
     - name: docker ps
       run: docker ps -a
     - name: run test script
-      run: test.sh
+      run: bash test.sh
