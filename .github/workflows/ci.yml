@@ -47,6 +47,7 @@ jobs:
     - name: run docker-compose
       run: |
         docker-compose up -d
+        sleep 10
     - name: docker ps
       run: docker ps -a
 
