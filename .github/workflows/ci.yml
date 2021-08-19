@@ -15,9 +15,9 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build backend
-      run: go build -v backend
+      run: go build -v ./backend
     - name: Build frontend
-      run: go build -v frontend
+      run: go build -v ./frontend
 
     - name: Test
-      run: go test -v frontend
+      run: go test -v ./frontend
