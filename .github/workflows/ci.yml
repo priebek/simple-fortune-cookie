@@ -47,5 +47,7 @@ jobs:
     - name: run docker-compose
       run: |
         docker-compose up -d
+    - name: docker ps
+      run: docker ps -a
     - name: run test script
       run: test.sh
