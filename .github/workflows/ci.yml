@@ -47,5 +47,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: run
       run: |
-        docker-compose up
+        docker-compose up -d
         curl localhost:8080
