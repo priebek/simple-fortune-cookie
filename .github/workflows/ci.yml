@@ -42,7 +42,7 @@ jobs:
         
   life-check:
     runs-on: ubuntu-latest
-    container: docker:20.10
+    container: tmaier/docker-compose:20.10
     steps:
     - uses: actions/checkout@v2
     - name: run
