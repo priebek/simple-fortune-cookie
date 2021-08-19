@@ -48,5 +48,5 @@ jobs:
     - name: run
       run: |
         docker-compose up -d
-        apt get update && apt install curl -y
+        apt-get update && apt-get install curl -y
         curl localhost:8080
