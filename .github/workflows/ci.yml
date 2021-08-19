@@ -42,7 +42,7 @@ jobs:
         
   life-check:
     runs-on: ubuntu-latest
-    container: golang:1.17
+    container: docker:20.10
     steps:
     - uses: actions/checkout@v2
     - name: run
