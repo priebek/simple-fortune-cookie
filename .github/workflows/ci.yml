@@ -47,6 +47,5 @@ jobs:
     - name: run docker-compose
       run: |
         docker-compose up -d
-    - name: curl localhost
-      run: |
-        curl localhost:8080
+    - name: run test script
+      run: test.sh
