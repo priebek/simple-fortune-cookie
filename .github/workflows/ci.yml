@@ -48,5 +48,5 @@ jobs:
     - name: run
       run: |
         docker-compose up -d
-        apk add curl -y
+        apk update && apk add curl
         curl localhost:8080
