@@ -1,3 +1,7 @@
+env:
+  docker_username: ${{ secrets.DOCKER_USERNAME }}
+  docker_password: ${{ secrets.DOCKER_PASSWORD }}
+  
 name: CI
 
 on:
@@ -22,6 +26,26 @@ jobs:
       run: |
         cd frontend
         go build -v
+  
+  Docker-build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: build backend
+        run: |
+          cd backend
+          export GIT_COMMIT="GA-$GITHUB_SHA"
+          chmod +x docker-build.backend.sh
+          docker-build.backend.sh
+      - name: upload backend
+        run: |
+          cd backend
+          export GIT_COMMIT="GA-$GITHUB_SHA"
+          chmod +x docker-push.backend.sh
+          docker-push.backend.sh
+
+
+
 
   lint-test:
     runs-on: ubuntu-latest
