@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    container: golang:1.17
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build backend
+      run: go build -v backend
+    - name: Build frontend
+      run: go build -v frontend
+
+    - name: Test
+      run: go test -v frontend
