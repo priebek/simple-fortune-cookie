@@ -51,7 +51,7 @@ jobs:
       run: docker ps -a
 
     - name: log backend
-    - run: docker logs simple-fortune-cookie_backend_1
+      run: docker logs simple-fortune-cookie_backend_1
 
     - name: log frontend
       run: docker logs simple-fortune-cookie_frontend_1
