@@ -51,10 +51,10 @@ jobs:
       run: docker ps -a
 
     - name: log backend
-    - run: docker logs cookie-backend
+    - run: docker logs simple-fortune-cookie_backend_1
 
     - name: log frontend
-    - run: docker logs cookie-frontend
+      run: docker logs simple-fortune-cookie_frontend_1
 
     - name: run test script
       run: bash test.sh
