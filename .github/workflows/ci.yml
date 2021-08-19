@@ -49,5 +49,13 @@ jobs:
         docker-compose up -d
     - name: docker ps
       run: docker ps -a
+
+    - name: log backend
+    - run: docker logs cookie-backend
+
+    - name: log frontend
+    - run: docker logs cookie-frontend
+
     - name: run test script
       run: bash test.sh
+
