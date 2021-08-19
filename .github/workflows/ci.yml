@@ -42,7 +42,6 @@ jobs:
         
   life-check:
     runs-on: ubuntu-latest
-    container: tmaier/docker-compose:20.10
     steps:
     - uses: actions/checkout@v2
     - name: run docker-compose
@@ -50,5 +49,4 @@ jobs:
         docker-compose up -d
     - name: curl localhost
       run: |
-        apk update && apk add curl
         curl localhost:8080
